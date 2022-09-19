@@ -3,9 +3,9 @@
 <img src="https://img.shields.io/badge/version-1.0.0-37c248"><br>
 
 **Qooey** QtQuick2/QML theme.<br><br>
-*Qooey is a liquid-based QML style.*<br>
-The term Qooey was inspired by the name Gooey, which was mixed with QML.<br>
-Many people use CSS to create a liquid look by blending blur and contrast.<br>
+*Qooey is a gooey-based QML style.*<br>
+The term **Qooey** was inspired by the name **Gooey**, which was mixed with **QML**.<br>
+A liquid style may be made by combining *blur* and *contrast* effects, which are commonly used in **CSS** styles by web developers.<br>
 All components are built from base components, making it simple to design your own liquid component.<br><br>
 *If you liked these components, please consider givin a star :star2:.*
 
