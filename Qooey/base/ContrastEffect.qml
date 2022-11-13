@@ -1,4 +1,8 @@
-import QtQuick 2.0
+// Copyright (C) 2022 smr.
+// SPDX-License-Identifier: MIT
+// https://smr76.github.io
+
+import QtQuick 2.15
 
 ShaderEffect {
     id: control
@@ -6,15 +10,5 @@ ShaderEffect {
     property var source
     property color color: "#fff"
 
-    fragmentShader: "
-        uniform lowp sampler2D source;
-        uniform lowp float qt_Opacity;
-        uniform lowp float width;
-        uniform lowp vec4 color;
-        varying highp vec2 qt_TexCoord0;
-
-        void main() {
-            highp vec4 p = texture2D(source, qt_TexCoord0);
-            gl_FragColor = color * qt_Opacity * smoothstep(0.0f, 10.0f/width, p.r - 0.25f);
-        }"
+    fragmentShader: "qrc:/Qooey/shaders/contrast.glsl"
 }
