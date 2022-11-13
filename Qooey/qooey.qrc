@@ -22,11 +22,18 @@
         <file>StackView.qml</file>
         <file>qmldir</file>
         <file>script.js</file>
-        <file>base/FastShadow.qml</file>
         <file>base/Liquid.qml</file>
         <file>base/BoxShadow.qml</file>
         <file>base/ContrastEffect.qml</file>
         <file>base/Pie.qml</file>
         <file>base/Bubbles.qml</file>
+        <file>shaders/box-shadow.glsl</file>
+        <file>shaders/bubbles.glsl</file>
+        <file>shaders/liquid.glsl</file>
+        <file>shaders/pie.glsl</file>
+        <file>shaders/contrast.glsl</file>
+        <file>shaders/dashed-ring.glsl</file>
+        <file>base/OpacityMask.qml</file>
+        <file>shaders/opacity-mask.glsl</file>
     </qresource>
 </RCC>

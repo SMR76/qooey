@@ -1,11 +1,9 @@
 // Copyright (C) 2022 smr.
-// SPDX-License-Identifier: LGPL-3.0-only
-// http://s-m-r.ir
+// SPDX-License-Identifier: MIT
+// https://smr76.github.io
 
 import QtQuick 2.15
 import QtQuick.Templates 2.15 as T
-import QtQuick.Controls 2.15
-import QtGraphicalEffects 1.15
 
 T.Dial {
     id: control
@@ -25,7 +23,7 @@ T.Dial {
         DashedRing {
             x: (parent.width - width)/2
             y: x
-            width: mouse1.hovered ? control.width : 0
+            width: mouse1.hovered || control.down ? control.width : 0
             height: width
             strokeWidth: 2
             dashWidth: 1

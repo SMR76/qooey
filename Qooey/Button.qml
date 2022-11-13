@@ -1,14 +1,12 @@
 // Copyright (C) 2022 smr.
-// SPDX-License-Identifier: LGPL-3.0-only
-// http://s-m-r.ir
+// SPDX-License-Identifier: MIT
+// https://smr76.github.io
 
 import QtQuick 2.15
 import QtQuick.Templates 2.15 as T
 import QtQuick.Controls 2.15
 
 import Qooey 1.0
-import 'base'
-
 T.Button {
     id: control
 

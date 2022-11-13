@@ -1,3 +1,3 @@
 // Copyright (C) 2022 smr.
-// SPDX-License-Identifier: LGPL-3.0-only
-// http://s-m-r.ir
+// SPDX-License-Identifier: MIT
+// https://smr76.github.io
