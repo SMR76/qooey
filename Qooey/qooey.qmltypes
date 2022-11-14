@@ -30,37 +30,26 @@ Module {
         isCreatable: false
         isSingleton: true
         Method {
-            name: "blend"
-            type: "QVariant"
-            Parameter { name: "color1"; type: "QVariant" }
-            Parameter { name: "color2"; type: "QVariant" }
-        }
-        Method {
-            name: "setAlpha"
-            type: "QVariant"
-            Parameter { name: "color"; type: "QVariant" }
-            Parameter { name: "alpha"; type: "QVariant" }
+            name: "alpha"
+            type: "color"
+            Parameter { name: "color"; type: "color" }
+            Parameter { name: "alpha"; type: "real" }
         }
         Method {
             name: "clamp"
-            type: "QVariant"
-            Parameter { name: "x"; type: "QVariant" }
-            Parameter { name: "a"; type: "QVariant" }
-            Parameter { name: "b"; type: "QVariant" }
+            type: "real"
+            Parameter { name: "value"; type: "real" }
+            Parameter { name: "a"; type: "real" }
+            Parameter { name: "b"; type: "real" }
         }
         Method {
             name: "remap"
-            type: "QVariant"
-            Parameter { name: "value"; type: "QVariant" }
-            Parameter { name: "low1"; type: "QVariant" }
-            Parameter { name: "high1"; type: "QVariant" }
-            Parameter { name: "low2"; type: "QVariant" }
-            Parameter { name: "high2"; type: "QVariant" }
-        }
-        Method {
-            name: "invertColor"
-            type: "QVariant"
-            Parameter { name: "color"; type: "QVariant" }
+            type: "real"
+            Parameter { name: "value"; type: "real" }
+            Parameter { name: "low1"; type: "real" }
+            Parameter { name: "high1"; type: "real" }
+            Parameter { name: "low2"; type: "real" }
+            Parameter { name: "high2"; type: "real" }
         }
     }
 }

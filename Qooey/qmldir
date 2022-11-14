@@ -6,8 +6,8 @@ Script              1.0 script.js
 singleton Qooey     1.0 Qooey.qml
 
 ContrastEffect      1.0 base/ContrastEffect.qml
+OpacityMask         1.0 base/OpacityMask.qml
 BoxShadow           1.0 base/BoxShadow.qml
-FastShadow          1.0 base/FastShadow.qml
 DashedRing          1.0 base/DashedRing.qml
 Bubbles             1.0 base/Bubbles.qml
 Liquid              1.0 base/Liquid.qml

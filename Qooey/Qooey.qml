@@ -7,31 +7,33 @@ import QtQuick 2.15
 
 QtObject {
     /**
-      *
-      */
-    function blend(color1, color2) {
-        let color = color1;
-        color.r = (color1.r + color2.r) / 2;
-        color.g = (color1.g + color2.g) / 2;
-        color.b = (color1.b + color2.b) / 2;
-        color.b = (color1.a + color2.a) / 2;
-        return color;
+     * @param color
+     * @param alpha
+     * @returns a color with new alpha value.
+     */
+    function alpha(color: color, alpha: real): color {
+        return Qt.rgba(color.r, color.g, color.b, alpha);
     }
 
-    function setAlpha(color, alpha) {
-        color.a = alpha;
-        return color;
-    }
-
-    function clamp(x, a, b) {
-        return Math.min(Math.max(x, a), b);
-    }
-
-    function remap(value, low1, high1, low2, high2) {
+    /**
+     * @param value
+     * @param low1
+     * @param high1
+     * @param low2
+     * @param high2
+     * @returns remaped value
+     */
+    function remap(value: real, low1: real, high1: real, low2: real, high2: real): real {
         return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
     }
 
-    function invertColor(color) {
-        return Qt.rgba(1.0 - color.r, 1.0 - color.g, 1.0 - color.b, 1.0);
+    /**
+     * @param x
+     * @param a
+     * @param b
+     * @returns clamp value between @var a and @var b
+     */
+    function clamp(value: real, a: real, b: real): real {
+        return Math.min(Math.max(value, a), b);
     }
 }
