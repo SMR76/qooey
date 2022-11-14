@@ -4,6 +4,10 @@
 <a href="https://www.blockchain.com/bch/address/bitcoincash:qrnwtxsk79kv6mt2hv8zdxy3phkqpkmcxgjzqktwa3">
 <img src="https://img.shields.io/badge/BCH-Donate-f0992e?logo=BitcoinCash&logoColor=f0992e" alt="BCH donate"></a></p>
 
+> **Warning**<br>
+> It appears that this component is ***INCOMPATIBLE*** with `Qt6.*`, which I am working to resolve as soon as possible.
+> <br>&nbsp;
+
 **Qooey** QtQuick2/QML theme.<br><br>
 *Qooey is a gooey-based QML style.*<br>
 The term **Qooey** was inspired by the name **Gooey**, which was mixed with **QML**.<br>
@@ -70,6 +74,9 @@ If you are confused, please refer to [example-1](example/example-1/) for a clear
 - [ ] ComboBox <i><sub>(under development)</sub></i>
 
 </details>
+
+## To-Do
+- [ ] Fix compatibility issues with `Qt6.*`.
 
 ## Issues
 

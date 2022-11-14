@@ -8,8 +8,8 @@ import Qooey 1.0
 ApplicationWindow {
     id: window
 
-    width: toggleButton.checked ? scrollView.contentWidth : 230
-    height: 420
+    width: 240
+    height: 455
     visible: true
 
     palette {
@@ -26,17 +26,19 @@ ApplicationWindow {
     }
 
     component ButtonColor: Button {
-        width: 20; height: width
+        width: 20; height: width; text: '\u25cf'
         onClicked: {
-            window.palette.base = palette.button
             window.palette.button = palette.button
+            window.palette.buttonText = palette.buttonText
             window.palette.highlight = Qt.darker(palette.button, 1.5)
         }
     }
 
     component BackColor: Button {
-        width: 20; height: width
+        width: 20; height: width; text: '\u25cf'
         onClicked: {
+            window.palette.base = palette.button
+            window.palette.text = palette.buttonText
             window.palette.window = palette.button
             window.palette.windowText = palette.buttonText
         }
@@ -50,44 +52,37 @@ ApplicationWindow {
     Settings {
         id: settings
         fileName: 'config.conf'
-        property alias toggleButton: toggleButton.checked
-        property real xScroll: scrollView.xScroll
+        property real xscroll: scrollView.xscroll
     }
 
-    Row {
-        x: 5; z: 3; spacing: 2
-        AbstractButton {
-            id: toggleButton
-            width: 15; height: 15
-            checkable: true
-            font.family: 'Cascadia Code Light'
-            contentItem: Text {
-                text: parent.checked ? '▶◀' : '◀▶'
-                color: palette.button
-            }
+    Control {
+        x: 5; y: window.height - height - 10; z: 3
+        padding: 5
+        background: Rectangle { color: palette.windowText; opacity: 0.2; radius: 3 }
+        contentItem: Row {
+            ButtonColor { palette{button: '#48abff';buttonText: '#f5f6f7'}}
+            ButtonColor { palette{button: '#ef476f';buttonText: '#1d1c21'}}
+            ButtonColor { palette{button: '#ffd166';buttonText: '#1d1c21'}}
+            ButtonColor { palette{button: '#06d6a0';buttonText: '#1d1c21'}}
+            ButtonColor { palette{button: '#d5b9ff';buttonText: '#1d1c21'}}
+            ButtonColor { palette{button: '#1d1c21';buttonText: '#f5f6f7'}}
+            ButtonColor { palette{button: '#edc9aa';buttonText: '#1d1c21'}}
+            Item { width: 15; height: parent.height }
+            BackColor { palette {button: '#f5f6f7'; buttonText: '#343536'}}
+            BackColor { palette {button: '#1d1c21'; buttonText: '#f5f6f7'}}
         }
-        ButtonColor { palette.button: '#48abff'; text: '.' }
-        ButtonColor { palette.button: '#ef476f'; text: '.' }
-        ButtonColor { palette.button: '#ffd166'; text: '.' }
-        ButtonColor { palette.button: '#06d6a0'; text: '.' }
-        ButtonColor { palette.button: '#d5b9ff'; text: '.' }
-        ButtonColor { palette.button: '#343536'; text: '.' }
-        ButtonColor { palette.button: '#edc9aa'; text: '.' }
-        Rectangle { color: window.palette.windowText ;width: 1; height: parent.height }
-        BackColor { palette {button: '#f5f6f7'; buttonText: '#343536'} text: '.' }
-        BackColor { palette {button: '#343536'; buttonText: '#f5f6f7'} text: '.' }
-        BackColor { palette {button: '#1d1c21'; buttonText: '#ffffff'} text: '.' }
+
     }
 
     ScrollView {
         id: scrollView
 
-        property real xScroll: ScrollBar.horizontal.position
-        Component.onCompleted: ScrollBar.horizontal.position = settings.xScroll
+        property real xscroll: ScrollBar.horizontal.position
+        Component.onCompleted: ScrollBar.horizontal.position = settings.xscroll
 
         anchors.fill: parent
 
-        contentWidth: 690
+        contentWidth: 750
         contentHeight: height
 
         Grid {
@@ -100,6 +95,7 @@ ApplicationWindow {
             spacing: 25
 
             Column {
+                width: 200
                 spacing: 10
                 Frame {
                     Grid {
@@ -205,7 +201,7 @@ ApplicationWindow {
                         color: 'transparent'
                         radius: 6
                         border.width: 1
-                        border.color: Qt.darker(window.palette.base, 1.1)
+                        border.color: Qt.darker(window.palette.button, 1.1)
 
                         BusyIndicator {
                             anchors.centerIn: parent
@@ -231,6 +227,7 @@ ApplicationWindow {
 
             Column {
                 spacing: 7
+                width: 200
 
                 ProgressBar {
                     width: 180;
@@ -277,6 +274,7 @@ ApplicationWindow {
 
             Column {
                 spacing: 5
+                width: 200
                 Text {
                     width: parent.width
                     text: "Dial"
@@ -316,7 +314,6 @@ ApplicationWindow {
                     color: window.palette.windowText
                     font.family: carlito.name
                 }
-
 
                 ComboBox {
                     id: comboBox

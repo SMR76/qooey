@@ -14,7 +14,6 @@ T.Tumbler {
                              implicitContentHeight + topPadding + bottomPadding)
 
     font.pixelSize: 12
-    palette.text: "gray"
 
     delegate: Text {
         text: modelData

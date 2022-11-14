@@ -4,15 +4,15 @@ This file only offers documentation for the additional properties of components 
 On [doc.qt.io](https://doc.qt.io/qt-6/qtquick-controls2-qmlmodule.html), you can find the documentation for the remaining components.
 
 ## Table Of Content
-- [Quick Start](#quick-start)
-- [Change Color Theme](#change-color-theme)
-- [Components](#components)
-  + **base**
-    * [DashedRing](#dashed-ring) `[base]`
-    * [Liquid](#liquid) `[base]`
-  + [Dial](#dial)
-  + [ProgressBar](#progressbar)
-  + [Qooey](#qooey) `[singleton]`
+- [Documentation](#documentation)
+  - [Table Of Content](#table-of-content)
+  - [Quick Start](#quick-start)
+  - [Change Color Theme](#change-color-theme)
+  - [Components](#components)
+    - [Dashed Ring](#dashed-ring)
+    - [Liquid](#liquid)
+    - [Dial](#dial)
+    - [ProgressBar](#progressbar)
 
 ## Quick Start
 
@@ -42,101 +42,65 @@ To alter the color scheme of a component, update the palette properties on the <
 
 This is a basic component which generates a dashed ring.
 
-#### Component properties:
-##### `[property]` `[real]` dashCount: 2
+**Component properties:**<br>
++ `[property]` `[real]` dashCount: 2
 The number of dashes on the ring is specified by this property.
-##### `[property]` `[real]` borderWidth: 2
++ `[property]` `[real]` borderWidth: 2
 This property specifies the width of the border, which can range from $0$ to $\dfrac{width}{2}$.
-##### `[property]` `[real]` dashWidth: 2
++ `[property]` `[real]` dashWidth: 2
 This property specifies the width of dashes.
-##### `[property]` `[color]` palette.base
-This property derives from the `Control` component, which specifies the `color` of the dashes.
++ `[property]` `[color]` palette.base
+    This property derives from the `Control` component, which specifies the `color` of the dashes.
 
-```qml
-DashedRing {
-    width: 100
-    height: 100
+    ```qml
+    DashedRing {
+        width: 100
+        height: 100
 
-    borderWidth: 2
-    dashWidth: 2
-    dashCount: 25
-    palette.base: 'blue'
-}
-```
+        borderWidth: 2
+        dashWidth: 2
+        dashCount: 25
+        palette.base: 'blue'
+    }
+    ```
 ---
 ### Liquid
 
 This is a basic component which generates a luquid like circle.
 
-#### Component properties:
-##### `[property]` `[bool]` fill: false
-The number of dashes on the ring is specified by this property.
-##### `[property]` `[real]` seed: 0
-This property specifies seed value used for random function used in `Shader`.
-##### `[property]` `[color]` color: '#000'
-This property specifies the `color` of the dashes.
-##### `[property]` `[real]` distorted: 3
-This property specifies amount distortion.
-##### `[property]` `[real]` strokeWidth: 1
-This property specifies the stroke width.
+**Component properties:**<br>
++ `[property]` `[bool]` fill: false
+    The number of dashes on the ring is specified by this property.
++ `[property]` `[real]` seed: 0
+    This property specifies seed value used for random function used in `Shader`.
++ `[property]` `[color]` color: '#000'
+    This property specifies the `color` of the dashes.
++ `[property]` `[real]` distorted: 3
+    This property specifies amount distortion.
++ `[property]` `[real]` strokeWidth: 1
+    This property specifies the stroke width.
 
-```qml
-Liquid {
-    width: 100
-    height: 100
+    ```qml
+    Liquid {
+        width: 100
+        height: 100
 
-    strokeWidth: 2
-    distorted: 3
-    color: 'blue'
-    fill: true
-    seed: 20
-}
-```
+        strokeWidth: 2
+        distorted: 3
+        color: 'blue'
+        fill: true
+        seed: 20
+    }
+    ```
 ----
 ### Dial
-#### Component properties:
-##### `[property]` `[DashedRing]` dottedRing
-This property refers to the [DashedRing](#dashed-ring) component used in the Dial component.
+**Component properties:**<br>
++ `[property]` `[DashedRing]` dottedRing
+    This property refers to the [DashedRing](#dashed-ring) component used in the Dial component.
 
 ----
 ### ProgressBar
-#### Component properties:
-##### `[property]` `[int]` orientation: Qt.Horizontal
-This property determines the orientation of the ProgressBar component.<br>
-Either `Qt.Horizontal` or `Qt.Vertical` can be the value.
-
-----
-### Qooey
-#### Component functions:
-##### function blend(`color` color1, `color` color2): `color`
-This function returns an average color from two input color RGBA values.
-```javascript
-Qooey.blend(Qt.rgba(0, 0, 0, 1), Qt.rgba(1, 1, 1, 0));
-// Qt.rgba(.5, .5, .5, .5)
-```
-
-##### function setAlpha(`color` color, `real` alpha): `color`
-This function set new alpha values for given color.
-```javascript
-Qooey.setAlpha(Qt.rgba(1, 1, 1, 1), 0.3); // Qt.rgba(1, 1, 1, 0.3)
-```
-
-##### function clamp(`real` x, `real` a, `real` b): `real`
-This functions constrain `x` to lie between `a` and `b`.
-```javascript
-Qooey.clamp(1, 3, 5); // 3
-Qooey.clamp(1, 8, 5); // 5
-Qooey.clamp(1,-4, 5); // 1
-```
-
-##### function remap(`real` value, `real` low1, `real` high1, `real` low2, `real` high2): `real`
-This function re-maps a number from one range to another.
-```javascript
-Qooey.remap(2, 1, 3, 0, 10); // 5
-```
-
-##### function invertColor(`color` color): `color`
-This function invert RGB values of input color.
-```javascript
-Qooey.invertColor(Qt.rgba(0.2, 1, 0.5, 1)); // Qt.rgba(0.8, 0, 0.5, 1)
-```
+**Component properties:**<br>
++ `[property]` `[int]` orientation: Qt.Horizontal
+    This property determines the orientation of the ProgressBar component.<br>
+    Either `Qt.Horizontal` or `Qt.Vertical` can be the value.
